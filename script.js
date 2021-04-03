@@ -1,12 +1,12 @@
-//const fetch = require('node-fetch');
+//const axios = require('axios');
 
 
-let myRequest = 'https://animechan.vercel.app/api/random';
+var myRequest = 'https://animechan.vercel.app/api/random';
 
 
-fetch(myRequest).then(function(response) {
-    return response.text().then(function(text) {
-        document.body.innerHTML = text;
-    });
-});
+axios.get(myRequest)
+    .then(function (response) {
+        document.body.innerHTML = response.data.quote;
+ })
 
+ 
