@@ -1,0 +1,29 @@
+
+#textDiv {
+    position: relative;
+    color: red;
+    width: 100%;
+    max-width: 60%;
+    margin: 17% auto;
+    align-self: center;
+}    
+
+#Quote {
+    text-align: center;
+}
+
+#Character {
+    color: blue;
+    text-align: right;
+}
+
+#img {
+    display: block;
+    width:500px;
+    height:100px;
+    width: auto;
+    height: auto;
+
+}
+
+
