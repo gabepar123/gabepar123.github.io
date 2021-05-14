@@ -8,39 +8,42 @@ getQuote(myRequest);
 function getQuote(myRequest){
     axios.get(myRequest)
         .then(function (response) {
+            if (response.data.quote.length > 225) {
+                getQuote(myRequest);
+                return;
+            }
             document.getElementById("Quote").innerHTML = "\"" + response.data.quote + "\"";
-            document.getElementById("Character").innerHTML = "- " + response.data.character;
-            getCharacterID(response);
+            document.getElementById("Character").innerHTML = response.data.character;
+            getImage(response);
     })
         .catch(err => {
             if (err){
                 document.getElementById("Quote").innerHTML = "Too many requests, please try again later";
-                document.getElementById("Character").innerHTML = "- " + "Gabe";
+                document.getElementById("Character").innerHTML = "Gabe";
             }
     })
 }
 
-function getCharacterID(response){
+function getImage(response){
     axios.get('https://api.jikan.moe/v3/search/character?q=' + response.data.character + '&limit=1')
         .then(function (response) {
-            getImage(response);
-    })
-}
-
-function getImage(response){
-    axios.get('https://api.jikan.moe/v3/character/' + response.data.results[0].mal_id + '/pictures')
-                .then(function(response){
-                    console.log(response.data.pictures[0].large);
-                    var url = response.data.pictures[0].large;
-                    var image = new Image();
-                    image.src = url;
-                    document.getElementById('img').appendChild(image);
+            var image = document.createElement('img');
+            image.src = response.data.results[0].image_url;
+            var src = document.getElementById('img-div');
+            src.appendChild(image);
+        })
+        .catch(err => {
+            if (err){
+                getQuote(myRequest);
+            }
     })
 }
 
 /*
-var url = 'https://cdn.myanimelist.net/images/characters/11/32678.jpg';
-var image = new Image();
-image.src = url;
-document.getElementById('img').appendChild(image);
+document.getElementById("Quote").innerHTML = "xoxo sadasd adas dsad asdas dasd asd asdasd asda sdasd asdasd adas dsadasd asdsddsdsdsd sdsd.";
+var image = document.createElement('img');
+image.src = 'https://cdn.myanimelist.net/images/characters/11/32678.jpg';
+var src = document.getElementById('block')
+src.appendChild(image);
+
 */

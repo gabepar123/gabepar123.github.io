@@ -1,29 +1,52 @@
-
-#textDiv {
-    position: relative;
-    color: red;
-    width: 100%;
-    max-width: 60%;
-    margin: 17% auto;
-    align-self: center;
-}    
-
-#Quote {
-    text-align: center;
+body {
+    background-image: url(background-img.jpg);
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size:cover
 }
 
-#Character {
-    color: blue;
-    text-align: right;
+#block{
+    background-color: white;
+    background-color:rgb(255, 255, 255, 0.5);
+    margin: 20px 20px 0 0;  
+    border: 5px solid #3333;
+    overflow: auto;
+    max-width: 50%;
+    
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
 }
 
-#img {
+
+#img-div {
+    float: left;
+}
+
+#img-div img {
     display: block;
-    width:500px;
-    height:100px;
-    width: auto;
-    height: auto;
-
+    margin: 20px;
 }
 
+#quote-div {
+    color: black;
+}
 
+#quote-div #Quote {
+    margin-right: 20px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 210px;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 40px;
+}
+
+#quote-div #Character {
+    text-align: center;
+
+}
