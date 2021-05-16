@@ -19,7 +19,7 @@ body {
     overflow: auto;
     max-width: 50%;
     min-width: 50%;
-    min-height: 38%;
+    min-height: 39%;
     max-height: 39%;
     position: fixed;
     top: 35%;
@@ -50,16 +50,23 @@ body {
     margin-left: 210px;
     text-align: center;
     font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-    line-height: 145%;
+    color: white;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5), 2px 2px 0px #000000;
     font-variant: small-caps;
     letter-spacing:0.1em;
-    font-size: 40px;
+    font-weight: 520;
+    font-size: 30px;
 }
 /* Character that said the quote */
 #quote-div #Character {
     text-align: center;
     margin-right: 20px;
     margin-left: 210px;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    
+    font-variant: small-caps;
+    font-size: 20px;
+
 }
 
 /* New quote Buttom */
