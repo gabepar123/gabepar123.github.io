@@ -1,19 +1,26 @@
 body {
     background-image: url(background-img.jpg);
     background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size:cover
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover
 }
-
-#block{
-    background-color: white;
-    background-color:rgb(255, 255, 255, 0.5);
+/* Main div with img and quote */
+#block {
+    background-color:rgba(252, 156, 84, 0.75);
     margin: 20px 20px 0 0;  
+    border-radius: 10px;
     border: 5px solid #3333;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+        rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
     overflow: auto;
     max-width: 50%;
-    
+    min-width: 50%;
+    min-height: 38%;
+    max-height: 39%;
     position: fixed;
     top: 35%;
     left: 50%;
@@ -36,17 +43,55 @@ body {
     color: black;
 }
 
+/* p Quote */
 #quote-div #Quote {
     margin-right: 20px;
     margin-top: 20px;
-    text-align: center;
     margin-left: 210px;
-    font-family: 'Montserrat';
-    font-weight: 800;
+    text-align: center;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    line-height: 145%;
+    font-variant: small-caps;
+    letter-spacing:0.1em;
     font-size: 40px;
 }
-
+/* Character that said the quote */
 #quote-div #Character {
     text-align: center;
-
+    margin-right: 20px;
+    margin-left: 210px;
 }
+
+/* New quote Buttom */
+#quoteButton {
+    display:inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid black;
+    margin: 0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:  none;
+    font-family: 'Roboto',sans-serif;
+    font-weight:300;
+    color: black;
+    text-align:center;
+    transition: all 0.2s;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    bottom: 0;    
+}
+
+/* New quote Buttom */
+#quoteButton:hover{
+    color: white;
+    background-color:black;
+}
+
+@media all and (max-width:30em){
+    #quoteButton{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+

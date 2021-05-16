@@ -1,19 +1,25 @@
-//const axios = require("axios");
-
-
+//Quote request
 var myRequest = 'https://animechan.vercel.app/api/random';
 
-getQuote(myRequest);
+getQuote();
 
-function getQuote(myRequest){
+//gets new quote
+function newQuote(){
+    document.getElementById("Quote").innerHTML = "Loading New Quote...";
+    document.getElementById("Character").innerHTML = "Try again later if this takes longer than expected.";
+    var elem = document.getElementById('img');
+    elem.remove();
+    getQuote();
+}
+
+//gets a quote, and then sends the getImage()
+function getQuote(){
     axios.get(myRequest)
         .then(function (response) {
             if (response.data.quote.length > 225) {
                 getQuote(myRequest);
                 return;
             }
-            document.getElementById("Quote").innerHTML = "\"" + response.data.quote + "\"";
-            document.getElementById("Character").innerHTML = response.data.character;
             getImage(response);
     })
         .catch(err => {
@@ -24,13 +30,12 @@ function getQuote(myRequest){
     })
 }
 
-function getImage(response){
-    axios.get('https://api.jikan.moe/v3/search/character?q=' + response.data.character + '&limit=1')
-        .then(function (response) {
-            var image = document.createElement('img');
-            image.src = response.data.results[0].image_url;
-            var src = document.getElementById('img-div');
-            src.appendChild(image);
+//gets the image and calls addToHTML() to add the image and quote to website
+//finds the image by searching for the character of the quote and using the first result
+async function getImage(quote){
+    axios.get('https://api.jikan.moe/v3/search/character?q=' + quote.data.character + '&limit=1')
+    .then(function (response) {
+            addToHTML(response, quote);
         })
         .catch(err => {
             if (err){
@@ -39,11 +44,14 @@ function getImage(response){
     })
 }
 
-/*
-document.getElementById("Quote").innerHTML = "xoxo sadasd adas dsad asdas dasd asd asdasd asda sdasd asdasd adas dsadasd asdsddsdsdsd sdsd.";
-var image = document.createElement('img');
-image.src = 'https://cdn.myanimelist.net/images/characters/11/32678.jpg';
-var src = document.getElementById('block')
-src.appendChild(image);
-
-*/
+function addToHTML(img, response){
+    //add image
+    var image = document.createElement('img');
+    image.id = 'img';
+    image.src = img.data.results[0].image_url;
+    var src = document.getElementById('img-div');
+    src.appendChild(image);
+    //adds quote and character
+    document.getElementById("Quote").innerHTML = "\"" + response.data.quote + "\"";
+    document.getElementById("Character").innerHTML = response.data.character;
+}
