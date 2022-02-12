@@ -26,7 +26,8 @@ div{
 
 #main {
     background-color:  #66bfbf;
-    max-width: fit-content;
+
+    
     width:600px;
     border-radius: 10px;
     border: 5px solid #3333;
@@ -34,6 +35,8 @@ div{
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    zoom: 1.5;
+    
 }
 
 .modal {
@@ -50,6 +53,7 @@ div{
     width:500px;
     max-width: 80%;
     text-align: center;
+
 
 }
 
@@ -90,3 +94,4 @@ div{
     opacity: 1;
     pointer-events: all;
 }
+

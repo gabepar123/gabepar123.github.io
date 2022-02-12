@@ -29,7 +29,6 @@ function openModal(modal) {
   if (modal == null) return
   modal.classList.add('active')
   overlay.classList.add('active')
-  console.log(overlay.classList.toString)
 }
 
 function closeModal(modal) {
@@ -73,8 +72,6 @@ function search(modal){
 
     var set = "cl3c2FED152EXRIIENjt7XDootXOVf_KTGBQK84vj9DuXR6CaW_gMsUcJe2VG1Auw1o2n2Tk1YwoNC98M4bdcX_pBQ4VrDTPDkhpDc7VBAdGnAmXwnzNs-jM5A0HYnYx"
 
-    
-    console.log(myRequest);
     get(myRequest, set, modal);
     
 }
@@ -90,18 +87,18 @@ function get(myRequest, set, modal){
         }
     })
     .then(response => {
-        console.log(response.data.businesses);
         var data = response.data.businesses[0];
         var name = data.name + '!';
         var rating = "Rating: " + data.rating + ' stars';
         
         var reviews = data.review_count + " Reviews";
         var link = data.url;
-        name.href = link;
+       
         var image_url = data.image_url;
         var city = "City: " + data.location.city;
         
         document.getElementById("name").innerHTML = name;
+        document.getElementById("link").href = link;
         document.getElementById("rating").innerHTML = rating;
         document.getElementById("reviews").innerHTML = reviews;
         document.getElementById("city").innerHTML = city;
