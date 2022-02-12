@@ -1,0 +1,58 @@
+<!doctype html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+<meta name="robots" content="no index, nofollow"> 
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Foodie!</title>
+    </head>
+
+    <body>
+        <div id="main">
+            <h1>Hey Ashley, where should we eat? &#129300;</h1>
+            <input type="text" id="location" placeholder="Enter location">
+
+            <div id="CuisineDiv">
+                <label>Cuisine? (a.k.a. Genre &#128544;) Check all that apply</label>
+                <ul id="CuisineUL">
+                  <li><input type="checkbox" value="mexican"> Mexican</li>
+                  <li><input type="checkbox" value="newamerican"> American</li>
+                  <li><input type="checkbox" value="italian"> Italian</li>
+                  <li><input type="checkbox" value="japanese"> Japanese</li>
+                  <li><input type="checkbox" value="chinese"> Chinese</li>
+                  <li><input type="checkbox" value="korean"> Korean</li>
+                  <li><input type="checkbox" value="vietnamese"> Vietnamese</li>
+                  <li><input type="checkbox" value="thai"> Thai</li>
+                  <li><input type="checkbox" value="filipino"> Filipino</li>
+                  <li><input type="checkbox" value="indpak"> Indian</li>
+                  <li><input type="checkbox" value="mideastern"> Middle Eastern</li>
+                  <li><input type="checkbox" value="mediterranean"> Mediterranean</li>
+                  <li><input type="checkbox" value="african"> African</li>
+                  <li><input type="checkbox" value="french"> French</li>
+                  <li><input type="checkbox" value="spanish"> Spanish</li>
+                  <li><input type="checkbox" value="portuguese"> Portuguese</li>
+                  <li><input type="checkbox" value="brazilian"> Brazilian</li>
+                  <li><input type="checkbox" value="peruvian"> Peruvian</li>
+                  <input type="text" id="other" placeholder="Other (Cuisines/Bar/Takeout/Burgers)">
+                </ul>
+              </div>
+              <button data-modal-target="#modal">Tap Me When Ready Ash! &#128563;</button>
+        <footer>For Ash with Love, Happy Valentine's Day! &#128151;</footer>
+        </div>
+        
+
+        <div id="modal" class="modal">
+            <div id=header>
+                <button data-close-button class="close" id="close">&times;</button>
+            </div>
+            <h1 id="name"></h1>
+            <h4 id="rating"></h4>
+            <h4 id="reviews"></h4>
+            <h4 id="city"></h4>
+            <div id="img-div"></div>
+        </div>
+        <div id="overlay"></div>
+    </body> 
+    <script src="script.js"></script>
+</html>
