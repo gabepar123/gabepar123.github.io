@@ -27,6 +27,7 @@ div{
 #main {
     background-color:  #66bfbf;
     max-width: fit-content;
+    width:600px;
     border-radius: 10px;
     border: 5px solid #3333;
     position:absolute;
