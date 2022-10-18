@@ -87,7 +87,9 @@ function get(myRequest, set, modal){
         }
     })
     .then(response => {
-        var data = response.data.businesses[0];
+        var choices = response.data.businesses;
+        var length = choices.length;
+        var data = choices[Math.floor(Math.random() * choices.length)];
         var name = data.name + '!';
         var rating = "Rating: " + data.rating + ' stars';
         
